@@ -1,0 +1,66 @@
+// Variables Sass
+$color-primary: #0d6efd;
+$color-dark: #0f172a;
+$color-light-bg: #f8fafc;
+$font-stack: 'Inter', 'Segoe UI', sans-serif;
+$transition-speed: 0.2s;
+$border-radius-card: 20px;
+
+// Estilos base
+body {
+    font-family: $font-stack;
+    background: $color-light-bg;
+    color: #1e293b;
+}
+
+// Navbar con degradado (anidación)
+.navbar {
+    background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    .navbar-brand {
+        font-weight: 700;
+        img {
+            transition: transform $transition-speed;
+            &:hover {
+                transform: scale(1.05);
+            }
+        }
+    }
+    .nav-link {
+        &:hover {
+            color: #facc15 !important;
+        }
+    }
+}
+
+// Tarjetas modernas (anidación)
+.card {
+    border-radius: $border-radius-card;
+    transition: all 0.3s;
+    &:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 25px 35px -12px rgba(0,0,0,0.2);
+        .card-img-top {
+            transform: scale(1.03);
+        }
+    }
+    .card-img-top {
+        height: 220px;
+        object-fit: cover;
+        transition: transform 0.5s;
+    }
+    .btn-outline-primary {
+        border-radius: 40px;
+        &:hover {
+            background: $color-primary;
+        }
+    }
+}
+
+// Foco accesible
+a, button, input, select, textarea {
+    &:focus {
+        outline: 3px solid #facc15;
+        outline-offset: 3px;
+    }
+}

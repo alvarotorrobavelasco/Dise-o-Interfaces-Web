@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <!-- SEO Metatags (Anexo 4) -->
+    <meta name="description" content="WanderLust - Blog de viajes con destinos increíbles, consejos y guías gratuitas. Inspírate para tu próxima aventura.">
+    <meta name="keywords" content="viajes, destinos, aventura, guía de viaje, turismo, wanderlust">
+    <meta name="author" content="Tu Nombre">
+    <title>WanderLust | Blog de viajes y aventuras</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- CSS personalizado -->
+    <link rel="stylesheet" href="css/custom.css">
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="assets/img/favicon.ico">
+</head>
+<body>
+
+<!-- ==================== MENÚ DE NAVEGACIÓN (BOOTSTRAP) ==================== -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top" aria-label="Menú principal">
+    <div class="container">
+        <a class="navbar-brand d-flex align-items-center" href="#">
+            <img src="assets/img/logo.svg" alt="Logo WanderLust" height="40" class="me-2">
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMain" aria-controls="navbarMain" aria-expanded="false" aria-label="Abrir menú">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarMain">
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                <li class="nav-item"><a class="nav-link active" aria-current="page" href="#inicio">Inicio</a></li>
+                <li class="nav-item"><a class="nav-link" href="#destinos">Destinos</a></li>
+                <li class="nav-item"><a class="nav-link" href="#consejos">Consejos</a></li>
+                <li class="nav-item"><a class="nav-link" href="#contacto">Contacto</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<!-- ==================== CARRUSEL (COMPONENTE BOOTSTRAP) ==================== -->
+<div id="carouselViajes" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-indicators">
+        <button type="button" data-bs-target="#carouselViajes" data-bs-slide-to="0" class="active" aria-label="Diapositiva 1"></button>
+        <button type="button" data-bs-target="#carouselViajes" data-bs-slide-to="1" aria-label="Diapositiva 2"></button>
+        <button type="button" data-bs-target="#carouselViajes" data-bs-slide-to="2" aria-label="Diapositiva 3"></button>
+    </div>
+    <div class="carousel-inner">
+        <div class="carousel-item active">
+            <!-- Imagen con WebP + fallback JPG -->
+            <picture>
+                <source srcset="assets/img/montana.webp" type="image/webp">
+                <img src="assets/img/montana.jpg" class="d-block w-100" alt="Montañas nevadas con lago" loading="lazy">
+            </picture>
+            <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50 rounded">
+                <h1>Descubre paisajes increíbles</h1>
+                <p>Aventura y naturaleza en estado puro</p>
+            </div>
+        </div>
+        <div class="carousel-item">
+            <img src="assets/img/playa.jpg" class="d-block w-100" alt="Playa tropical con palmeras" loading="lazy">
+            <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50 rounded">
+                <h2>Playas paradisíacas</h2>
+                <p>Relájate y desconecta</p>
+            </div>
+        </div>
+        <div class="carousel-item">
+            <img src="assets/img/bosque.jpg" class="d-block w-100" alt="Bosque frondoso con niebla" loading="lazy">
+            <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50 rounded">
+                <h2>Aventura en la selva</h2>
+                <p>Vive experiencias únicas</p>
+            </div>
+        </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselViajes" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Anterior</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselViajes" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Siguiente</span>
+    </button>
+</div>
+
+<!-- ==================== DESTINOS (REJILLA RESPONSIVE) ==================== -->
+<main class="container my-5" id="destinos">
+    <h2 class="text-center mb-4">Destinos recomendados</h2>
+    <div class="row g-4">
+        <!-- Tarjeta 1 -->
+        <div class="col-12 col-md-6 col-lg-4">
+            <div class="card h-100 shadow-sm">
+                <img src="assets/img/suiza.jpg" class="card-img-top" alt="Cabaña suiza en los Alpes" loading="lazy">
+                <div class="card-body">
+                    <h3 class="card-title h5">Suiza - Alpes</h3>
+                    <p class="card-text">Senderismo, esquí y paisajes de postal. Ideal para amantes de la montaña.</p>
+                    <button type="button" class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#modalInfo" data-bs-info="suiza">Más info</button>
+                </div>
+            </div>
+        </div>
+        <!-- Tarjeta 2 (con tooltip) -->
+        <div class="col-12 col-md-6 col-lg-4">
+            <div class="card h-100 shadow-sm">
+                <img src="assets/img/tailandia.jpg" class="card-img-top" alt="Playa de Tailandia con aguas turquesas" loading="lazy">
+                <div class="card-body">
+                    <h3 class="card-title h5">Tailandia - Phi Phi</h3>
+                    <p class="card-text">Kayak, snorkel y atardeceres de ensueño.</p>
+                    <button type="button" class="btn btn-outline-primary" data-bs-toggle="tooltip" data-bs-placement="top" title="Ofertas especiales: vuelos con descuento">Ofertas</button>
+                </div>
+            </div>
+        </div>
+        <!-- Tarjeta 3 -->
+        <div class="col-12 col-md-6 col-lg-4">
+            <div class="card h-100 shadow-sm">
+                <img src="assets/img/japon.jpg" class="card-img-top" alt="Calle antigua en Kioto con templos" loading="lazy">
+                <div class="card-body">
+                    <h3 class="card-title h5">Japón - Kioto</h3>
+                    <p class="card-text">Templos, ceremonias del té y cultura milenaria.</p>
+                    <button type="button" class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#modalInfo" data-bs-info="japon">Más info</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+
+<!-- ==================== PESTAÑAS (TABS) ==================== -->
+<div class="container my-5" id="consejos">
+    <h2 class="text-center">Consejos útiles para viajar</h2>
+    <ul class="nav nav-tabs justify-content-center" id="travelTab" role="tablist">
+        <li class="nav-item" role="presentation">
+            <button class="nav-link active" id="equipaje-tab" data-bs-toggle="tab" data-bs-target="#equipaje" type="button" role="tab">Equipaje inteligente</button>
+        </li>
+        <li class="nav-item" role="presentation">
+            <button class="nav-link" id="seguros-tab" data-bs-toggle="tab" data-bs-target="#seguros" type="button" role="tab">Seguros de viaje</button>
+        </li>
+    </ul>
+    <div class="tab-content mt-3">
+        <div class="tab-pane fade show active" id="equipaje" role="tabpanel">
+            <p>✅ Lleva solo lo necesario, usa organizadores de equipaje, pesa tu maleta antes de salir y no olvides un cargador portátil.</p>
+        </div>
+        <div class="tab-pane fade" id="seguros" role="tabpanel">
+            <p>✅ Contrata un seguro con cobertura médica y cancelación. Compara precios en comparadores especializados antes de viajar.</p>
+        </div>
+    </div>
+</div>
+
+<!-- ==================== CANVAS ANIMADO (INTERACTIVIDAD) ==================== -->
+<div class="bg-light py-4 text-center">
+    <h3>🌍 Mi mapa de viajes</h3>
+    <canvas id="canvasViajes" width="300" height="120" style="max-width:100%; background:#e9ecef; border-radius:20px;" aria-label="Gráfico animado de países visitados"></canvas>
+    <p class="mt-2"><small>Países explorados (simulación interactiva con animación)</small></p>
+</div>
+
+<!-- ==================== VÍDEO Y AUDIO (MULTIMEDIA OPTIMIZADO) ==================== -->
+<div class="container my-5">
+    <h3 class="text-center">🎥 Inspiración en movimiento</h3>
+    <div class="row">
+        <div class="col-lg-6">
+            <video controls width="100%">
+                <source src="assets/video/viaje.mp4" type="video/mp4">
+                Tu navegador no soporta el elemento de vídeo. Puedes descargar el vídeo <a href="assets/video/viaje.mp4">aquí</a>.
+            </video>
+            <p class="small text-muted">Vídeo de paisajes del mundo (formato MP4 optimizado)</p>
+        </div>
+        <div class="col-lg-6">
+            <audio controls>
+                <source src="assets/audio/ambient.mp3" type="audio/mpeg">
+                Tu navegador no soporta el elemento de audio.
+            </audio>
+            <p class="small text-muted">Sonido ambiente de la selva tropical (MP3, 128kbps)</p>
+        </div>
+    </div>
+</div>
+
+<!-- ==================== FORMULARIO DE CONTACTO (ACCESIBLE) ==================== -->
+<div class="container my-5" id="contacto">
+    <h2 class="text-center">Recibe guías de viaje gratis</h2>
+    <form action="#" method="post" class="row g-3 needs-validation" novalidate>
+        <div class="col-md-6">
+            <label for="nombre" class="form-label">Nombre completo</label>
+            <input type="text" class="form-control" id="nombre" required>
+            <div class="invalid-feedback">Por favor, escribe tu nombre.</div>
+        </div>
+        <div class="col-md-6">
+            <label for="email" class="form-label">Correo electrónico</label>
+            <input type="email" class="form-control" id="email" required>
+            <div class="invalid-feedback">Introduce un email válido (ej: nombre@dominio.com).</div>
+        </div>
+        <div class="col-12">
+            <label for="destinoInteres" class="form-label">Destino de interés</label>
+            <select class="form-select" id="destinoInteres" required>
+                <option value="">Selecciona uno...</option>
+                <option>Suiza</option>
+                <option>Tailandia</option>
+                <option>Japón</option>
+            </select>
+            <div class="invalid-feedback">Elige un destino.</div>
+        </div>
+        <div class="col-12">
+            <button class="btn btn-primary" type="submit">Enviar solicitud</button>
+        </div>
+    </form>
+</div>
+
+<!-- ==================== FOOTER Y MODALES ==================== -->
+<footer class="bg-dark text-white text-center py-3">
+    <p class="mb-0">© 2026 WanderLust - Blog de viajes | <a href="#" data-bs-toggle="modal" data-bs-target="#legalModal" class="text-white">Aviso legal y licencias</a></p>
+</footer>
+
+<!-- Modal para información de destinos -->
+<div class="modal fade" id="modalInfo" tabindex="-1" aria-labelledby="modalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="modalLabel">Detalles del destino</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+            </div>
+            <div class="modal-body" id="modalBodyText">
+                Información adicional aquí.
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal legal -->
+<div class="modal fade" id="legalModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-body">
+                <p>Web con fines educativos. Las imágenes son de Pexels (licencia gratuita). El vídeo y audio son de fuentes libres. Logo diseñado por el autor.</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Scripts de Bootstrap y nuestro JavaScript -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>"<!-- Mejora de accesibilidad -->" 
